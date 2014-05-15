@@ -1,0 +1,418 @@
+\hypertarget{class_m_t_random}{\section{M\+T\+Random Class Reference}
+\label{class_m_t_random}\index{M\+T\+Random@{M\+T\+Random}}
+}
+
+
+M\+T random interface.  
+
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_m_t_random_a0d2e3a1fc694095ed0cdb5fdd0cf1fb9}{enum {\bfseries Normalization} \{ {\bfseries S\+T\+D\+N\+O\+R\+M\+A\+L} = 0, 
+{\bfseries P\+O\+W\+E\+R\+L\+A\+W} = 1
+ \}}\label{class_m_t_random_a0d2e3a1fc694095ed0cdb5fdd0cf1fb9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_t_random_af0a395715fa76193de56b49a98bef41d}{M\+T\+Random} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_m_t_random}{M\+T\+Random} class. \end{DoxyCompactList}\item 
+\hyperlink{class_m_t_random_a6c49868b07fd6300f99877fdd7115997}{M\+T\+Random} (int seed)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_m_t_random}{M\+T\+Random} class. \end{DoxyCompactList}\item 
+\hyperlink{class_m_t_random_a2ca2ad75c477b008d70380f9fd03c9a6}{M\+T\+Random} (string phrase)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_m_t_random}{M\+T\+Random} class. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_ad0cc614bc3b023f2036e6a0bc5532763}{value} ()
+\begin{DoxyCompactList}\small\item\em Returns a pseudo-\/random number between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_a6406f326587e9cb869277f97ffa56f83}{value} (bool include\+One)
+\begin{DoxyCompactList}\small\item\em Returns a pseudo-\/random number greater than or equal to zero, and either strictly less than one, or less than or equal to one, depending on the value of the given boolean parameter. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_a56cf43aef8ed6504c5c4d8fd379704df}{value\+Norm} (float temperature)
+\begin{DoxyCompactList}\small\item\em Returns a pseudo-\/random number between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). Normalized around 0.\+5 with {\itshape temperature} . \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_aef2e82a3345b85fdc075476b2c1f81de}{value\+Power} (float temperature)
+\begin{DoxyCompactList}\small\item\em Returns a pseudo-\/random number in Power Law distribution between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_a5bfa094b57244746389d4ab89284c8a7}{value\+Poisson} (float lambda)
+\begin{DoxyCompactList}\small\item\em Returns a pseudo-\/random number in Poisson distribution between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_a0f9deae2e629a2e8a9164d7f53e35537}{value\+Exponential} (float lambda)
+\begin{DoxyCompactList}\small\item\em Returns a pseudo-\/random number in Exponential distribution between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_abbd3cdd52723d6540e1ec30ab105e31e}{value\+Gamma} (int order)
+\begin{DoxyCompactList}\small\item\em Returns a pseudo-\/random number the gamma distribution. \end{DoxyCompactList}\item 
+int \hyperlink{class_m_t_random_ab1d2aae9abe7a2d01a8a93ecb697248c}{Range} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_a3ffd8b27980f7f416d33c3823b0c2611}{Range} (float min, float max)
+\begin{DoxyCompactList}\small\item\em Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_a67f0856b5501a37b3ec078fbf0096754}{Range\+Norm} (float min, float max, float temperature)
+\begin{DoxyCompactList}\small\item\em Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_t_random_aa7ab0237fc962a1f63e0a90c24db2ed2}{Range\+Power} (float min, float max, float temperature)
+\begin{DoxyCompactList}\small\item\em Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. in Power Law distribution \end{DoxyCompactList}\item 
+Color \hyperlink{class_m_t_random_adf641ad01fbd3c27a38f3047e59eb45d}{color} ()
+\begin{DoxyCompactList}\small\item\em Return the next pseudo-\/random number as a Color \end{DoxyCompactList}\item 
+Color \hyperlink{class_m_t_random_ae3f6b4f17b19399861d75f877e24d4f7}{color} (float min, float max)
+\begin{DoxyCompactList}\small\item\em Return the next pseudo-\/random number as a Color with a linear scale \mbox{[}0.\+0-\/1.\+0\mbox{]}. Use a range between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]} to reduce the color range. \end{DoxyCompactList}\item 
+\hypertarget{class_m_t_random_a28394b9419cee95f3b7cef5b269ef6df}{Vector2 {\bfseries Point\+In\+A\+Square} ()}\label{class_m_t_random_a28394b9419cee95f3b7cef5b269ef6df}
+
+\item 
+\hypertarget{class_m_t_random_a7ce51ff0fde5d9f0a508bdaa528a830c}{Vector2 {\bfseries Point\+In\+A\+Square} (Normalization n, float t)}\label{class_m_t_random_a7ce51ff0fde5d9f0a508bdaa528a830c}
+
+\item 
+\hypertarget{class_m_t_random_ad91aa159280b36e6eafb6eb9638b1cc1}{Vector2 {\bfseries Point\+In\+A\+Circle} ()}\label{class_m_t_random_ad91aa159280b36e6eafb6eb9638b1cc1}
+
+\item 
+\hypertarget{class_m_t_random_a553c19d7dc936ccabc411b46dca83be3}{Vector2 {\bfseries Point\+In\+A\+Circle} (Normalization n, float t)}\label{class_m_t_random_a553c19d7dc936ccabc411b46dca83be3}
+
+\item 
+\hypertarget{class_m_t_random_a4ef4c9e90cbd576168827b38a92c12bd}{Vector2 {\bfseries Point\+In\+A\+Disk} ()}\label{class_m_t_random_a4ef4c9e90cbd576168827b38a92c12bd}
+
+\item 
+\hypertarget{class_m_t_random_a80193b6a2351fe862097479aad6eba24}{Vector2 {\bfseries Point\+In\+A\+Disk} (Normalization n, float t)}\label{class_m_t_random_a80193b6a2351fe862097479aad6eba24}
+
+\item 
+\hypertarget{class_m_t_random_a37ad054ace9ab2d9853e633618a0f841}{Vector3 {\bfseries Point\+In\+A\+Cube} ()}\label{class_m_t_random_a37ad054ace9ab2d9853e633618a0f841}
+
+\item 
+\hypertarget{class_m_t_random_ace356958f5a49e7fd57dfac834df576c}{Vector3 {\bfseries Point\+In\+A\+Cube} (Normalization n, float t)}\label{class_m_t_random_ace356958f5a49e7fd57dfac834df576c}
+
+\item 
+\hypertarget{class_m_t_random_a181c5763ec6fc54ce32b03e5e8b70999}{Vector3 {\bfseries Point\+On\+A\+Cube} ()}\label{class_m_t_random_a181c5763ec6fc54ce32b03e5e8b70999}
+
+\item 
+\hypertarget{class_m_t_random_a35b79e5690fc372501c9116db5d4edbf}{Vector3 {\bfseries Point\+On\+A\+Cube} (Normalization n, float t)}\label{class_m_t_random_a35b79e5690fc372501c9116db5d4edbf}
+
+\item 
+\hypertarget{class_m_t_random_a6af47a9f988ce9b163455b1abfb4e12d}{Vector3 {\bfseries Point\+On\+A\+Sphere} ()}\label{class_m_t_random_a6af47a9f988ce9b163455b1abfb4e12d}
+
+\item 
+\hypertarget{class_m_t_random_a8a4ffd8278d115d6b840b872a92cf6b4}{Vector3 {\bfseries Point\+In\+A\+Sphere} ()}\label{class_m_t_random_a8a4ffd8278d115d6b840b872a92cf6b4}
+
+\item 
+\hypertarget{class_m_t_random_ab3d4e8b9af933503afbd3640da7ae2ec}{Vector3 {\bfseries Point\+On\+Cap} (float spot\+Angle)}\label{class_m_t_random_ab3d4e8b9af933503afbd3640da7ae2ec}
+
+\item 
+\hypertarget{class_m_t_random_ad33764572f7d2aee6aa83e5b2539cc73}{Vector3 {\bfseries Point\+On\+Ring} (float inner\+Angle, float outer\+Angle)}\label{class_m_t_random_ad33764572f7d2aee6aa83e5b2539cc73}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \hyperlink{class_m_t_random_a2f08d7209bdcd77ed9598820497c6255}{Scale\+Float\+To\+Range} (float x, float new\+Min, float new\+Max, float old\+Min, float old\+Max)
+\begin{DoxyCompactList}\small\item\em Scales the float to any range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+M\+T random interface. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_m_t_random_af0a395715fa76193de56b49a98bef41d}{\index{M\+T\+Random@{M\+T\+Random}!M\+T\+Random@{M\+T\+Random}}
+\index{M\+T\+Random@{M\+T\+Random}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{M\+T\+Random}]{\setlength{\rightskip}{0pt plus 5cm}M\+T\+Random.\+M\+T\+Random (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_af0a395715fa76193de56b49a98bef41d}
+
+
+Initializes a new instance of the \hyperlink{class_m_t_random}{M\+T\+Random} class. 
+
+\hypertarget{class_m_t_random_a6c49868b07fd6300f99877fdd7115997}{\index{M\+T\+Random@{M\+T\+Random}!M\+T\+Random@{M\+T\+Random}}
+\index{M\+T\+Random@{M\+T\+Random}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{M\+T\+Random}]{\setlength{\rightskip}{0pt plus 5cm}M\+T\+Random.\+M\+T\+Random (
+\begin{DoxyParamCaption}
+\item[{int}]{seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a6c49868b07fd6300f99877fdd7115997}
+
+
+Initializes a new instance of the \hyperlink{class_m_t_random}{M\+T\+Random} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Seed.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_a2ca2ad75c477b008d70380f9fd03c9a6}{\index{M\+T\+Random@{M\+T\+Random}!M\+T\+Random@{M\+T\+Random}}
+\index{M\+T\+Random@{M\+T\+Random}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{M\+T\+Random}]{\setlength{\rightskip}{0pt plus 5cm}M\+T\+Random.\+M\+T\+Random (
+\begin{DoxyParamCaption}
+\item[{string}]{phrase}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a2ca2ad75c477b008d70380f9fd03c9a6}
+
+
+Initializes a new instance of the \hyperlink{class_m_t_random}{M\+T\+Random} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phrase} & Phrase.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_m_t_random_adf641ad01fbd3c27a38f3047e59eb45d}{\index{M\+T\+Random@{M\+T\+Random}!color@{color}}
+\index{color@{color}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}Color M\+T\+Random.\+color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_adf641ad01fbd3c27a38f3047e59eb45d}
+
+
+Return the next pseudo-\/random number as a Color 
+
+\hypertarget{class_m_t_random_ae3f6b4f17b19399861d75f877e24d4f7}{\index{M\+T\+Random@{M\+T\+Random}!color@{color}}
+\index{color@{color}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}Color M\+T\+Random.\+color (
+\begin{DoxyParamCaption}
+\item[{float}]{min, }
+\item[{float}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_ae3f6b4f17b19399861d75f877e24d4f7}
+
+
+Return the next pseudo-\/random number as a Color with a linear scale \mbox{[}0.\+0-\/1.\+0\mbox{]}. Use a range between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]} to reduce the color range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum.\\
+\hline
+{\em max} & Max.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_ab1d2aae9abe7a2d01a8a93ecb697248c}{\index{M\+T\+Random@{M\+T\+Random}!Range@{Range}}
+\index{Range@{Range}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{Range}]{\setlength{\rightskip}{0pt plus 5cm}int M\+T\+Random.\+Range (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_ab1d2aae9abe7a2d01a8a93ecb697248c}
+
+
+Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum.\\
+\hline
+{\em max} & Maximum.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_a3ffd8b27980f7f416d33c3823b0c2611}{\index{M\+T\+Random@{M\+T\+Random}!Range@{Range}}
+\index{Range@{Range}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{Range}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+Range (
+\begin{DoxyParamCaption}
+\item[{float}]{min, }
+\item[{float}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a3ffd8b27980f7f416d33c3823b0c2611}
+
+
+Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum.\\
+\hline
+{\em max} & Maximum.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_a67f0856b5501a37b3ec078fbf0096754}{\index{M\+T\+Random@{M\+T\+Random}!Range\+Norm@{Range\+Norm}}
+\index{Range\+Norm@{Range\+Norm}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{Range\+Norm}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+Range\+Norm (
+\begin{DoxyParamCaption}
+\item[{float}]{min, }
+\item[{float}]{max, }
+\item[{float}]{temperature}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a67f0856b5501a37b3ec078fbf0096754}
+
+
+Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum.\\
+\hline
+{\em max} & Maximum.\\
+\hline
+{\em temperature} & Temperature.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_aa7ab0237fc962a1f63e0a90c24db2ed2}{\index{M\+T\+Random@{M\+T\+Random}!Range\+Power@{Range\+Power}}
+\index{Range\+Power@{Range\+Power}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{Range\+Power}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+Range\+Power (
+\begin{DoxyParamCaption}
+\item[{float}]{min, }
+\item[{float}]{max, }
+\item[{float}]{temperature}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_aa7ab0237fc962a1f63e0a90c24db2ed2}
+
+
+Returns the next pseudo-\/random number integer between {\itshape min}  \mbox{[}inclusive\mbox{]} and {\itshape max}  \mbox{[}inclusive\mbox{]}. in Power Law distribution 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum.\\
+\hline
+{\em max} & Maximum.\\
+\hline
+{\em temperature} & Temperature.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_a2f08d7209bdcd77ed9598820497c6255}{\index{M\+T\+Random@{M\+T\+Random}!Scale\+Float\+To\+Range@{Scale\+Float\+To\+Range}}
+\index{Scale\+Float\+To\+Range@{Scale\+Float\+To\+Range}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{Scale\+Float\+To\+Range}]{\setlength{\rightskip}{0pt plus 5cm}static float M\+T\+Random.\+Scale\+Float\+To\+Range (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{new\+Min, }
+\item[{float}]{new\+Max, }
+\item[{float}]{old\+Min, }
+\item[{float}]{old\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_m_t_random_a2f08d7209bdcd77ed9598820497c6255}
+
+
+Scales the float to any range. 
+
+\begin{DoxyReturn}{Returns}
+The float to range.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate.\\
+\hline
+{\em new\+Min} & New minimum.\\
+\hline
+{\em new\+Max} & New max.\\
+\hline
+{\em old\+Min} & Old minimum.\\
+\hline
+{\em old\+Max} & Old max.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_ad0cc614bc3b023f2036e6a0bc5532763}{\index{M\+T\+Random@{M\+T\+Random}!value@{value}}
+\index{value@{value}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_ad0cc614bc3b023f2036e6a0bc5532763}
+
+
+Returns a pseudo-\/random number between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). 
+
+\begin{DoxyReturn}{Returns}
+This method returns a single-\/precision pseudo-\/random number greater than or equal to zero, and less than or equal to one. 
+\end{DoxyReturn}
+\hypertarget{class_m_t_random_a6406f326587e9cb869277f97ffa56f83}{\index{M\+T\+Random@{M\+T\+Random}!value@{value}}
+\index{value@{value}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+value (
+\begin{DoxyParamCaption}
+\item[{bool}]{include\+One}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a6406f326587e9cb869277f97ffa56f83}
+
+
+Returns a pseudo-\/random number greater than or equal to zero, and either strictly less than one, or less than or equal to one, depending on the value of the given boolean parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em include\+One} & If , the pseudo-\/random number returned will be less than or equal to one; otherwise, the pseudo-\/random number returned will be strictly less than one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If {\itshape include\+One}  is , this method returns a single-\/precision pseudo-\/random number greater than or equal to zero, and less than or equal to one. If {\itshape include\+One}  is , this method returns a single-\/precision pseudo-\/random number greater than or equal to zero and strictly less than one. 
+\end{DoxyReturn}
+\hypertarget{class_m_t_random_a0f9deae2e629a2e8a9164d7f53e35537}{\index{M\+T\+Random@{M\+T\+Random}!value\+Exponential@{value\+Exponential}}
+\index{value\+Exponential@{value\+Exponential}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{value\+Exponential}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+value\+Exponential (
+\begin{DoxyParamCaption}
+\item[{float}]{lambda}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a0f9deae2e629a2e8a9164d7f53e35537}
+
+
+Returns a pseudo-\/random number in Exponential distribution between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). 
+
+\begin{DoxyReturn}{Returns}
+The value.
+\end{DoxyReturn}
+\hypertarget{class_m_t_random_abbd3cdd52723d6540e1ec30ab105e31e}{\index{M\+T\+Random@{M\+T\+Random}!value\+Gamma@{value\+Gamma}}
+\index{value\+Gamma@{value\+Gamma}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{value\+Gamma}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+value\+Gamma (
+\begin{DoxyParamCaption}
+\item[{int}]{order}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_abbd3cdd52723d6540e1ec30ab105e31e}
+
+
+Returns a pseudo-\/random number the gamma distribution. 
+
+\begin{DoxyReturn}{Returns}
+The gamma value.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em order} & Order.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_a56cf43aef8ed6504c5c4d8fd379704df}{\index{M\+T\+Random@{M\+T\+Random}!value\+Norm@{value\+Norm}}
+\index{value\+Norm@{value\+Norm}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{value\+Norm}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+value\+Norm (
+\begin{DoxyParamCaption}
+\item[{float}]{temperature}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a56cf43aef8ed6504c5c4d8fd379704df}
+
+
+Returns a pseudo-\/random number between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). Normalized around 0.\+5 with {\itshape temperature} . 
+
+\begin{DoxyReturn}{Returns}
+This method returns a single-\/precision pseudo-\/random number greater than or equal to zero, and less than or equal to one Normalized around 0.\+5 with {\itshape temperature} . 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Temperature.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_m_t_random_a5bfa094b57244746389d4ab89284c8a7}{\index{M\+T\+Random@{M\+T\+Random}!value\+Poisson@{value\+Poisson}}
+\index{value\+Poisson@{value\+Poisson}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{value\+Poisson}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+value\+Poisson (
+\begin{DoxyParamCaption}
+\item[{float}]{lambda}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_a5bfa094b57244746389d4ab89284c8a7}
+
+
+Returns a pseudo-\/random number in Poisson distribution between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). 
+
+\begin{DoxyReturn}{Returns}
+The value.
+\end{DoxyReturn}
+\hypertarget{class_m_t_random_aef2e82a3345b85fdc075476b2c1f81de}{\index{M\+T\+Random@{M\+T\+Random}!value\+Power@{value\+Power}}
+\index{value\+Power@{value\+Power}!M\+T\+Random@{M\+T\+Random}}
+\subsubsection[{value\+Power}]{\setlength{\rightskip}{0pt plus 5cm}float M\+T\+Random.\+value\+Power (
+\begin{DoxyParamCaption}
+\item[{float}]{temperature}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_m_t_random_aef2e82a3345b85fdc075476b2c1f81de}
+
+
+Returns a pseudo-\/random number in Power Law distribution between 0.\+0 \mbox{[}inclusive\mbox{]} and 1.\+0 \mbox{[}inclusive\mbox{]} (Read Only). 
+
+\begin{DoxyReturn}{Returns}
+This method returns a single-\/precision pseudo-\/random number greater than or equal to zero, and less than or equal to one. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Temperature.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/tucano/\+Documents/\+Devel/\+Unity/\+Unity\+Projects/\+M\+T\+Random/\+Assets/\+M\+T\+Random/\+Scripts/lib/M\+T\+Random.\+cs\end{DoxyCompactItemize}
