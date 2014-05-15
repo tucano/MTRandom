@@ -3,7 +3,7 @@ using System;
 using UMT;
 
 /// <summary>
-/// MT random interface.
+/// MT random main class.
 /// </summary>
 public class MTRandom
 {
@@ -20,7 +20,7 @@ public class MTRandom
 	/// <summary>
 	/// Initializes a new instance of the <see cref="MTRandom"/> class.
 	/// </summary>
-	/// <param name="seed">Seed.</param>
+	/// <param name="seed">Seed (integer).</param>
 	public MTRandom(int seed)
 	{
 		_rand = new MersenneTwister(seed);
@@ -28,7 +28,7 @@ public class MTRandom
 	/// <summary>
 	/// Initializes a new instance of the <see cref="MTRandom"/> class.
 	/// </summary>
-	/// <param name="phrase">Phrase.</param>
+	/// <param name="phrase">Phrase (seed string).</param>
 	public MTRandom(string phrase)
 	{
 		char[] values = phrase.ToCharArray();
@@ -76,12 +76,11 @@ public class MTRandom
 		return _rand.NextSingle(includeOne);
 	}
 	/// <summary>
-	/// Returns a pseudo-random number between 0.0 [inclusive] and 1.0 [inclusive] (Read Only). 
-	/// Normalized around 0.5 with <paramref name="temperature"/>.
+	/// Returns a normalized pseudo-random number between 0.0 [inclusive] and 1.0 [inclusive] (Read Only). 
 	/// </summary>
 	/// <returns>
 	/// This method returns a single-precision pseudo-random number greater than or equal to zero, and less
-	/// than or equal to one Normalized around 0.5 with <paramref name="temperature"/>.
+	/// than or equal to one.
 	/// </returns>
 	/// <param name="temperature">Temperature.</param>
 	public float valueNorm(float temperature)
@@ -89,7 +88,7 @@ public class MTRandom
 		return (float) NormalDistribution.Normalize(_rand.NextSingle(true), temperature);
 	}
 	/// <summary>
-	/// Returns a pseudo-random number in Power Law distribution between 0.0 [inclusive] and 1.0 [inclusive] (Read Only). 
+	/// Returns a power-law pseudo-random number between 0.0 [inclusive] and 1.0 [inclusive] (Read Only). 
 	/// </summary>
 	/// <returns>
 	/// This method returns a single-precision pseudo-random number greater than or equal to zero, and less
@@ -117,7 +116,7 @@ public class MTRandom
 		return ExponentialDistribution.Normalize( _rand.NextSingle( false ), lambda );
 	}
 	/// <summary>
-	/// Returns a pseudo-random number the gamma distribution.
+	/// Returns a pseudo-random number on the gamma distribution.
 	/// </summary>
 	/// <returns>The gamma value.</returns>
 	/// <param name="order">Order.</param>
@@ -136,6 +135,23 @@ public class MTRandom
 	public int Range(int min, int max)
 	{
 		return _rand.Next(min,max+1);
+	}
+	/// <summary>
+	/// Returns the next pseudo-random number integer between <paramref name="min"/> [inclusive] and <paramref name="max"/> [depend on <paramref name="includeMax"/>].
+	/// </summary>
+	/// <param name="min">Minimum.</param>
+	/// <param name="max">Max.</param>
+	/// <param name="includeMax">If set to <c>true</c> include <paramref name="Max"/>.</param>
+	public int Range(int min, int max, bool includeMax)
+	{
+		if (includeMax)
+		{
+			return _rand.Next(min,max+1);
+		}
+		else
+		{
+			return _rand.Next(min,max);
+		}
 	}
 	/// <summary>
 	/// Returns the next pseudo-random number integer between <paramref name="min"/> [inclusive] and <paramref name="max"/> [inclusive].
@@ -199,32 +215,56 @@ public class MTRandom
 		STDNORMAL = 0,
 		POWERLAW = 1
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a square.
+	/// </summary>
+	/// <returns>The in point as Vector2.</returns>
 	public Vector2 PointInASquare()
 	{
 		return RandomSquare.Area(ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a square.
+	/// </summary>
+	/// <returns>The in point as Vector2.</returns>
+	/// <param name="n">Normalization type (STDNORMAL or POWERLAW).</param>
+	/// <param name="t">Temperature.</param>
 	public Vector2 PointInASquare(Normalization n , float t )
 	{
 		return RandomSquare.Area(ref _rand, n, t);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a circle.
+	/// </summary>
+	/// <returns>The in point as Vector2.</returns>
 	public Vector2 PointInACircle()
 	{			
 		return RandomDisk.Circle(ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a circle.
+	/// </summary>
+	/// <returns>The in point as Vector2.</returns>
+	/// <param name="n">Normalization type (STDNORMAL or POWERLAW).</param>
+	/// <param name="t">Temperature.</param>
 	public Vector2 PointInACircle(Normalization n, float t)
 	{			
 		return RandomDisk.Circle(ref _rand, n, t);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a disk.
+	/// </summary>
+	/// <returns>The in point as Vector2.</returns>
 	public Vector2 PointInADisk()
 	{
 		return RandomDisk.Disk(ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a disk.
+	/// </summary>
+	/// <returns>The in point as Vector2.</returns>
+	/// <param name="n">Normalization type (STDNORMAL or POWERLAW).</param>
+	/// <param name="t">Temperature.</param>
 	public Vector2 PointInADisk(Normalization n, float t)
 	{
 		return RandomDisk.Disk(ref _rand, n, t);
@@ -232,41 +272,70 @@ public class MTRandom
 	#endregion
 
 	#region VECTOR3
+	/// <summary>
+	/// pseudo-random number as a point in a cube.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
 	public Vector3 PointInACube()
 	{
 		return RandomCube.Volume(ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a cube.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
+	/// <param name="n">Normalization type (STDNORMAL or POWERLAW).</param>
+	/// <param name="t">Temperature.</param>
 	public Vector3 PointInACube(Normalization n, float t)
 	{
 		return RandomCube.Volume(ref _rand, n, t);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point on a cube surface.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
 	public Vector3 PointOnACube()
 	{
 		return RandomCube.Surface(ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point on a cube surface.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
+	/// <param name="n">Normalization type (STDNORMAL or POWERLAW).</param>
+	/// <param name="t">Temperature.</param>
 	public Vector3 PointOnACube(Normalization n, float t)
 	{
 		return RandomCube.Surface(ref _rand, n, t);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point on a sphere surface.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
 	public Vector3 PointOnASphere()
 	{
 		return RandomSphere.Surface(ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point in a sphere.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
 	public Vector3 PointInASphere()
 	{
 		return RandomSphere.Volume(ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point on a cap surface.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
 	public Vector3 PointOnCap(float spotAngle)
 	{
 		return RandomSphere.GetPointOnCap(spotAngle, ref _rand);
 	}
-
+	/// <summary>
+	/// pseudo-random number as a point on a ring surface.
+	/// </summary>
+	/// <returns>The in point as Vector3.</returns>
 	public Vector3 PointOnRing(float innerAngle, float outerAngle)
 	{
 		return RandomSphere.GetPointOnRing(innerAngle, outerAngle, ref _rand);
