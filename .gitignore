@@ -5,6 +5,8 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+docs/html
+docs/latex
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
