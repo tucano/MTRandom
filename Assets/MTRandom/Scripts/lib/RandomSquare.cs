@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace UMT
 {
+	/// <summary>
+	/// Random square.
+	/// </summary>
 	public static class RandomSquare
 	{
 		public static Vector2 Area( ref UMT.MersenneTwister _rand )

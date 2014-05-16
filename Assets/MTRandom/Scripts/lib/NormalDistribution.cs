@@ -1,15 +1,7 @@
 using System;
 
-////////////////////////////////////////////////////////////////////////////
-// C# Version Standard CDF                                                 //
-//                                                                         //
-// This code is free software under the Artistic license.                  //
-//                                                                         //
-/////////////////////////////////////////////////////////////////////////////
-
 namespace UMT 
 {
-
 	/// <summary>
     /// Convert a Uniform Distribution to a Normal Distribution
     /// </summary>

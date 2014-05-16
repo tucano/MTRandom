@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace UMT
 {
+	/// <summary>
+	/// Random disk.
+	/// </summary>
 	public static class RandomDisk
 	{
 		// CIRCLE with R=1

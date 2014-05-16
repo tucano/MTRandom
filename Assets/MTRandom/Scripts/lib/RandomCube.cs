@@ -3,12 +3,15 @@ using UnityEngine;
 
 namespace UMT
 {
+	/// <summary>
+	/// Random cube.
+	/// </summary>
 	public static class RandomCube
 	{
 		public static Vector3 Surface(ref UMT.MersenneTwister _rand)
 		{
 			// Move to -1, 1 space as for CIRCLE and SPHERE
-			Vector3 pos = GetPointOnCubeSurface(_rand.NextSingle(true),_rand.NextSingle(true),_rand.Next(5));	
+			Vector3 pos = GetPointOnCubeSurface(_rand.NextSingle(true),_rand.NextSingle(true),_rand.Next(6));	
 			return new Vector3((2*pos.x)-1, (2*pos.y)-1, (2*pos.z)-1);
 		}
 	
@@ -29,7 +32,7 @@ namespace UMT
 					_rand.Next(5));
 			break;
 			default:
-				pos = GetPointOnCubeSurface(_rand.NextSingle(true),_rand.NextSingle(true),_rand.Next(5));
+				pos = GetPointOnCubeSurface(_rand.NextSingle(true),_rand.NextSingle(true),_rand.Next(6));
 			break;
 			}
 			

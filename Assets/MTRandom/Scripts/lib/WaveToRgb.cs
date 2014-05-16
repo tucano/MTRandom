@@ -3,6 +3,9 @@ using System.Collections;
 
 namespace UMT
 {
+	/// <summary>
+	/// Wave to rgb converter.
+	/// </summary>
 	public class WaveToRgb 
 	{
 		// CONSTS

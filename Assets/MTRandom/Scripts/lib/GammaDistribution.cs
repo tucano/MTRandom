@@ -2,9 +2,12 @@ using System;
 
 namespace UMT
 {
-	// Returns a deviate distributed as a gamma distribution of integer of order ia, i.e. the waiting time for the iath event in a Poisson process of unit mean 
-	// Use _rand as a source of uniform deviates
-	// http://www.nrbook.com/a/bookcpdf.php
+	/// <summary>
+	/// Gamma distribution.
+	/// Returns a deviate distributed as a gamma distribution of integer of order ia, i.e. the waiting time for the iath event in a Poisson process of unit mean 
+	/// Use _rand as a source of uniform deviates
+	/// http://www.nrbook.com/a/bookcpdf.php
+	/// </summary>
 	public static class GammaDistribution
 	{
 		public static float Normalize(ref UMT.MersenneTwister _rand, int ia)

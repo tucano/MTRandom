@@ -6,6 +6,9 @@ using System;
 
 namespace UMT
 {
+	/// <summary>
+	/// Poisson distribution.
+	/// </summary>
 	public static class PoissonDistribution
 	{	
 		// Builtin arrays (native .NET arrays), are extremely fast and efficient but they can not be resized.			
@@ -17,10 +20,14 @@ namespace UMT
 			0.1208650973866179e-2,
 			-0.5395239384953e-5};
 
-		// 6.1 Gamma Function, Beta Function, Factorials, Binomial Coefficients 
-		// http://www.nrbook.com/a/bookcpdf/c6-1.pdf
-		// Return the natural log of a gamma function for xx > 0
-		// Internal arithmetic in double precision.
+		/// <summary>
+		/// Gammln the specified xx.
+		/// 6.1 Gamma Function, Beta Function, Factorials, Binomial Coefficients 
+		/// http://www.nrbook.com/a/bookcpdf/c6-1.pdf
+		/// Return the natural log of a gamma function for xx > 0
+		/// Internal arithmetic in double precision.
+		/// </summary>
+		/// <param name="xx">Xx.</param>
 		public static double gammln( double xx )
 		{
 			double x,y,tmp,ser;
@@ -40,8 +47,12 @@ namespace UMT
 			return -tmp+Math.Log(2.5066282746310005 * ser/x );
 		}
 
-		// return as a floating point number an integer value that is a random deviate drawn 
-		// from a Possion Distribution of mean xm using randx as a source of uniform deviates
+		/// <summary>
+		/// return as a floating point number an integer value that is a random deviate drawn 
+		/// from a Possion Distribution of mean xm using randx as a source of uniform deviates
+		/// </summary>
+		/// <param name="_rand">random generator.</param>
+		/// <param name="xm">Xm.</param>
 		public static float Normalize( ref UMT.MersenneTwister _rand, float xm)
 		{
 			// Davide Rambaldi: all moved to double precision			
