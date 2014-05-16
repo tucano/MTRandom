@@ -247,6 +247,7 @@ MonoBehaviour:
   max_objects: 1000
   temperature: 1
   sphereRadius: 5
+  rotationAmount: 10
 --- !u!4 &1817945837
 Transform:
   m_ObjectHideFlags: 0
